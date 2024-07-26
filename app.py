@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def make_turkey_sandwich():
-    # Step 1: Gather Ingredients
     ingredients = {
         "bread": "rye bread",
         "mayo": "mayonnaise",
@@ -15,7 +14,6 @@ def make_turkey_sandwich():
         "turkey": "turkey slices"
     }
     
-    # Step 2: Prepare Ingredients
     def prepare_ingredients(ingredients):
         ingredients["lettuce"] = "washed lettuce"
         ingredients["tomato"] = "sliced tomato"
@@ -23,7 +21,6 @@ def make_turkey_sandwich():
 
     prepared_ingredients = prepare_ingredients(ingredients)
     
-    # Step 3: Assemble Sandwich
     def assemble_sandwich(ingredients):
         sandwich = []
         sandwich.append(f"1 slice of {ingredients['bread']}")
@@ -38,7 +35,6 @@ def make_turkey_sandwich():
 
     sandwich = assemble_sandwich(prepared_ingredients)
     
-    # Step 4: Serve Sandwich
     def serve_sandwich(sandwich):
         result = "Your sandwich is ready:<br>"
         for step in sandwich:
@@ -49,7 +45,6 @@ def make_turkey_sandwich():
 
     result = serve_sandwich(sandwich)
     
-    # HTML Template with Styles
     html_template = """
     <!DOCTYPE html>
     <html lang="en">
